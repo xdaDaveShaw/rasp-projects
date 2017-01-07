@@ -1,3 +1,7 @@
+# From: http://www.instructables.com/id/Your-First-Project-in-Raspberry-Pi-LED-Blinking/?ALLSTEPS
+# License: https://creativecommons.org/licenses/by-nc-sa/2.5/
+# Changes: No
+
 import RPi.GPIO as Blink_led
 import time
 Blink_led.setmode(Blink_led.BOARD)
