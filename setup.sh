@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #Install VIM
 sudo apt-get install vim --yes
 
