@@ -28,3 +28,4 @@ git config --global alias.bdone "!f() { git checkout ${1-master} && git up && gi
 git config --global core.editor "vim"
 git config --global user.email "dave@taeguk.co.uk"
 git config --global user.name "Dave Shaw"
+git config --global push.default simple
