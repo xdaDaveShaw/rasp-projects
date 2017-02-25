@@ -1,15 +1,23 @@
 #!/bin/bash
 
+#Install latest updates
+sudo apt-get update --yes
+sudo apt-get dist-upgrade --yes
+
 #Install VIM
 sudo apt-get install vim --yes
 
+#Cleanup
+sudo apt-get autoremove --yes
+sudo apt-get clean --yes
+
 #Setup SSH
 cd ~
-chmod 700 /.ssh
+sudo chmod 700 /.ssh
 cd ~/.ssh
-chmod 600 id_rsa
-chmod 600 id_rsa.pub
-chmod 600 known_hosts
+sudo chmod 600 id_rsa
+sudo chmod 600 id_rsa.pub
+sudo chmod 600 known_hosts
 eval "$(ssh-agent -s)"
 ssh-add
 
