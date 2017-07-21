@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#Unzip SSH keys
+cd ~/Downloads
+if [ ! -f SSH.zip ]; then
+    echo "Missing SSH Keys"
+    exit 0
+fi
+unzip SSH.zip -d ~/.ssh/
+
 #Install latest updates
 sudo apt-get update --yes
 sudo apt-get dist-upgrade --yes
