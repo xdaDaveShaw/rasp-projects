@@ -4,8 +4,9 @@
 sudo apt-get update --yes
 sudo apt-get dist-upgrade --yes
 
-#Install VIM
+#Install Useful Toosl
 sudo apt-get install vim --yes
+sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer --yes
 
 #Cleanup
 sudo apt-get autoremove --yes
