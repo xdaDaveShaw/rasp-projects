@@ -7,12 +7,13 @@ if [ ! -f SSH.zip ]; then
     exit 0
 fi
 unzip SSH.zip -d ~/.ssh/
+rm SSH.zip
 
 #Install latest updates
 sudo apt-get update --yes
 sudo apt-get dist-upgrade --yes
 
-#Install Useful Toosl
+#Install Useful Tools
 sudo apt-get install vim --yes
 sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer --yes
 
