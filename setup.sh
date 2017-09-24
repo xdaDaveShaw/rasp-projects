@@ -17,6 +17,9 @@ sudo apt-get dist-upgrade --yes
 sudo apt-get install vim --yes
 sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer --yes
 
+# GPIO Zero
+sudo apt install python3-gpiozero python-gpiozero --yes
+
 #Cleanup
 sudo apt-get autoremove --yes
 sudo apt-get clean --yes
