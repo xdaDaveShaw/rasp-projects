@@ -13,6 +13,12 @@ rm SSH.zip
 sudo apt-get update --yes
 sudo apt-get dist-upgrade --yes
 
+#Set timezone
+sudo rm /etc/localtime
+sudo ln -s /usr/share/zoneinfo/Europe/London /etc/localtime
+sudo rm /etc/timezone
+echo "Europe/London" | sudo tee /etc/timezone 
+
 #Install Useful Tools
 sudo apt-get install vim --yes
 sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer --yes
