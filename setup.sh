@@ -3,7 +3,7 @@
 #Unzip SSH keys
 cd ~/Downloads
 if [ ! -f SSH.zip ]; then
-    echo "Missing SSH Keys"
+    echo "SSH Keys not found in ~/Downloads"
     exit 0
 fi
 unzip SSH.zip -d ~/.ssh/
