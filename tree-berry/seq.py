@@ -1,12 +1,16 @@
 from gpiozero import LEDBoard
 import time
 
-tree = LEDBoard(*range(2,28),pwm=True)
+star = LEDBoard(2, pwm=True)
+star.on()
 
-for counter in range(10000):
-    for led in tree:
-        print(led)
-        led.on()
-        time.sleep(10)
-        led.off()
+tree = LEDBoard(*range(4,28),pwm=True)
+
+while True:
+    for ledid in range(12):
+        tree[ledid].on()
+        tree[ledid+12].on()
+        time.sleep(.2)
+        tree[ledid].off()
+        tree[ledid+12].off()
 pause()
