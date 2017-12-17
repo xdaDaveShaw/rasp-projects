@@ -3,28 +3,30 @@ import shlex, subprocess
 
 cur_p = None
 
+def hand1(name):
+    global cur_p
+
+    print "recv'd: ", name
+    print "current process is: ", cur_p
+    if cur_p != None:
+        print "killing: ", cur_p
+        cur_p.kill()
+        print "killed process"
+
+    print "starting: ", name
+    cur_p = subprocess.Popen(["python", name])
+    print "started: ", name
+
 class TcpHandler(SocketServer.BaseRequestHandler):
     def handle(self):
         self.data = self.request.recv(1024).strip()
         print "{} wrote:".format(self.client_address[0])
-        self.hand1()
-
-    def hand1(self):
-        global cur_p
-        
-        print "recv'd: ", self.data
-        print "current process is: ", cur_p
-        if cur_p != None:
-            print "killing: ", cur_p
-            cur_p.kill()
-            print "killed current process"
-
-        print "starting: ", self.data
-        cur_p = subprocess.Popen(["python", self.data])
-
-        print "started: ", self.data
+        hand1(self.data)
 
 if __name__ == "__main__":
+
+    hand1("up.py")
+
     TCP_IP = '192.168.0.29'
     TCP_PORT = 5005
 
@@ -34,7 +36,6 @@ if __name__ == "__main__":
 
     try:
         server.serve_forever()
-        print "started server."
     finally:
         server.shutdown()
         server.server_close()
