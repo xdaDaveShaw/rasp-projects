@@ -3,6 +3,7 @@ from gpiozero import StatusBoard
 from signal import pause
 
 def send(name):
+	sb.off()
 	TCP_IP = '192.168.0.29'
 	TCP_PORT = 5005
 	BUFFER_SIZE=1024
@@ -14,12 +15,16 @@ def send(name):
 	s.close()
 def one_p():
 	send("up.py")
+	sb.one.lights.green.on()
 def two_p():
 	send("blink.py")
+	sb.two.lights.green.on()
 def three_p():
 	send("flicker.py")
+	sb.three.lights.green.on()
 def four_p():
 	send("seq.py")
+	sb.four.lights.green.on()
 
 sb = StatusBoard()
 
