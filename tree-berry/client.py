@@ -10,9 +10,13 @@ def send(name):
 
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.connect((TCP_IP, TCP_PORT))
+	print "sending command: ", name
 	s.send(name)
+	print "sent."
 	data = s.recv(BUFFER_SIZE)
 	s.close()
+
+
 def one_p():
 	send("up.py")
 	sb.one.lights.green.on()
