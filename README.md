@@ -12,4 +12,4 @@ curl https://raw.githubusercontent.com/xdaDaveShaw/rasp-projects/master/setup.sh
 
 ## Useful Links
 
-- [GPIO Pins](https://www.raspberrypi.org/documentation/usage/gpio-plus-and-raspi2/)
+- [GPIO Pins](https://www.raspberrypi.org/documentation/usage/gpio/README.md)
