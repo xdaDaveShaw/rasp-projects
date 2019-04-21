@@ -64,17 +64,3 @@ try:
 except KeyboardInterrupt:
     pass
 
-# while True:
-#     humidity = 45.2
-#     temperature = 16.8
-#     if humidity is not None and temperature is not None:
-#         print('Temp={0:0.1f}*C Humidity={1:0.1f}%'.format(temperature, humidity))
-#         # Send humidity and temperature feeds to Adafruit IO
-#         temperature = '%.2f'%(temperature)
-#         humidity = '%.2f'%(humidity)
-#         aio.send(temperature_feed.key, str(temperature))
-#         aio.send(humidity_feed.key, str(humidity))
-#     else:
-#         print('Failed to get Reading, trying again in ', READ_TIMEOUT, 'seconds')
-#     # Timeout to avoid flooding Adafruit IO
-#     time.sleep(READ_TIMEOUT)
