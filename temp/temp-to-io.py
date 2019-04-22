@@ -49,10 +49,13 @@ try:
             temperature = '%.2f'%(sensor.data.temperature)
             humidity = '%.2f'%(sensor.data.humidity)
             pressure = '%.2f'%(sensor.data.pressure)
-            
-            aio.send(temperature_feed.key, str(temperature))
-            aio.send(humidity_feed.key, str(humidity))
-            aio.send(pressure_feed.key, str(pressure))
+            try:
+                aio.send(temperature_feed.key, str(temperature))
+                aio.send(humidity_feed.key, str(humidity))
+                aio.send(pressure_feed.key, str(pressure))
+            except SSLError as e:
+                print ('SSL Exception Occurred, details to follow')
+                print (e)
 
             print(output)
         else:
