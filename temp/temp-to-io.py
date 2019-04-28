@@ -53,8 +53,8 @@ try:
                 aio.send(temperature_feed.key, str(temperature))
                 aio.send(humidity_feed.key, str(humidity))
                 aio.send(pressure_feed.key, str(pressure))
-            except SSLError as e:
-                print ('SSL Exception Occurred, details to follow')
+            except Exception as e:
+                print ('Exception Occurred, details to follow')
                 print (e)
 
             print(output)
