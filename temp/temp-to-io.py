@@ -26,7 +26,7 @@ sensor.set_temperature_oversample(bme680.OS_8X)
 API_USERNAME = "xdaDaveShaw"
 API_KEY = os.environ['AOI_KEY']
 
-READ_TIMEOUT = 15
+READ_TIMEOUT = 60  #Seconds 
 
 # Create an instance of the REST client.
 aio = Client(API_USERNAME, API_KEY)
