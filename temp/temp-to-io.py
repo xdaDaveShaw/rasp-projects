@@ -48,8 +48,6 @@ try:
                 sensor.data.pressure,
                 sensor.data.humidity)
 
-#          output = str(datetime.now()) + output
-
             temperature = '%.2f'%(sensor.data.temperature)
             humidity = '%.2f'%(sensor.data.humidity)
             pressure = '%.2f'%(sensor.data.pressure)
