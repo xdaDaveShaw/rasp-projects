@@ -3,6 +3,7 @@
 # import standard python modules.
 import time
 import os
+from datetime import datetime
 
 # import Adafruit IO REST client.
 from Adafruit_IO import Client, Feed
@@ -41,10 +42,13 @@ try:
     while True:
         if sensor.get_sensor_data():
 
-            output = '{0:.2f} C,  {1:.2f} hPa,  {2:.3f} %RH'.format(
+            output = '{0} - {1:.2f} C,  {2:.2f} hPa,  {3:.3f} %RH'.format(
+                datetime.now(),
                 sensor.data.temperature,
                 sensor.data.pressure,
                 sensor.data.humidity)
+
+#          output = str(datetime.now()) + output
 
             temperature = '%.2f'%(sensor.data.temperature)
             humidity = '%.2f'%(sensor.data.humidity)
