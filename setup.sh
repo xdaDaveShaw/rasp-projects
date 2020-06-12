@@ -21,7 +21,6 @@ echo "Europe/London" | sudo tee /etc/timezone
 
 #Install Useful Tools
 sudo apt-get install vim --yes
-sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer --yes
 
 # GPIO Zero
 sudo apt install python3-gpiozero python-gpiozero --yes
