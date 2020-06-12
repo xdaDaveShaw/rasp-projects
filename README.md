@@ -7,7 +7,7 @@ A collection of scripts and projects for my raspberry pi.
 Helper shell commands to run the setup script
 
 ```sh
-curl https://raw.githubusercontent.com/xdaDaveShaw/rasp-projects/master/setup.sh > setup && sh setup && rm setup
+curl https://raw.githubusercontent.com/xdaDaveShaw/rasp-projects/master/setup.sh > setup && bash setup && rm setup
 ```
 
 ## Useful Links
