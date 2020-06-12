@@ -22,6 +22,7 @@ echo "Europe/London" | sudo tee /etc/timezone
 #Install Useful Tools
 sudo apt-get install git --yes
 sudo apt-get install vim --yes
+sudo apt-get install python3-pip --yes
 
 # GPIO Zero
 sudo apt install python3-gpiozero python-gpiozero --yes
