@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #Unzip SSH keys
 cd ~/Downloads
@@ -20,6 +20,7 @@ sudo rm /etc/timezone
 echo "Europe/London" | sudo tee /etc/timezone 
 
 #Install Useful Tools
+sudo apt-get install git --yes
 sudo apt-get install vim --yes
 
 # GPIO Zero
