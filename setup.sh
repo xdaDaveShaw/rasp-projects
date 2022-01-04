@@ -47,7 +47,7 @@ git clone git@github.com:xdaDaveShaw/rasp-projects.git projects
 
 #Configure git
 git config --global alias.co 'checkout'
-git config --global alias.rbom ''!f() { DEFAULT=$(git default); git rebase origin/$DEFAULT $1; }; f''
+git config --global alias.rbom '!f() { DEFAULT=$(git default); git rebase origin/$DEFAULT $1; }; f'
 git config --global alias.rbc 'rebase --continue'
 git config --global alias.sw 'switch'
 git config --global alias.ec 'config --global -e'
