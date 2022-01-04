@@ -47,12 +47,29 @@ git clone git@github.com:xdaDaveShaw/rasp-projects.git projects
 
 #Configure git
 git config --global alias.co "checkout"
+git config --global alias.rbom "!f() { DEFAULT=$(git default); git rebase origin/$DEFAULT $1; }; f"
+git config --global alias.rbc "rebase --continue"
+git config --global alias.sw "switch"
 git config --global alias.ec "config --global -e"
-git config --global alias.cm "!git add -A && git commit -m"
-git config --global alias.cob "checkout -b"
 git config --global alias.up "!git pull --rebase --prune $@ && git submodule update --init --recursive"
-git config --global alias.bclean  "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
-git config --global alias.bdone "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+git config --global alias.cob "checkout -b"
+git config --global alias.cm "!git add -A && git commit"
+git config --global alias.cmm "!git add -A && git commit -m"
+git config --global alias.save "!git add -A && git commit -m 'SAVEPOINT'"
+git config --global alias.wip "!git add -u && git commit -m 'WIP'"
+git config --global alias.undo "reset HEAD~1 --mixed"
+git config --global alias.amend "commit -a --amend"
+git config --global alias.default "!git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
+git config --global alias.wipe "!git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard"
+git config --global alias.bclean "!f() { git branch --merged ${1} | grep -v " ${1}$" | xargs -r git branch -d; }; f"
+git config --global alias.bdone "!f() { DEFAULT=$(git default); git checkout ${1-$DEFAULT} && git up && git bclean ${1-$DEFAULT}; }; f"
+
+git config --global alias.lol "log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit"
+git config --global alias.lola "log --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit"
+git config --global alias.logg "log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+git config --global alias.web "!f() { git ls-remote --get-url origin; }; u=$(f); start $u"
+
 git config --global core.editor "vim"
 git config --global user.email "dave@taeguk.co.uk"
 git config --global user.name "Dave Shaw"
